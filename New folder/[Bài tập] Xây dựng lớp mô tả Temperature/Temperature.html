@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Temperature{
+        constructor(c) {
+            this._tem = c;
+        }
+        changeValueCtoF(){
+            if (this._tem <=-273){
+                alert("Vượt quá ngưỡng độ c cho phép");
+            }
+            return 9/5 * this._tem +32;
+        }
+        changeValueCtoK(){
+            if (this._tem <=-273){
+                alert("Vượt quá ngưỡng độ c cho phép")
+            }
+            return this._tem + 273.15;
+        }
+    }
+    let temPer = new Temperature(25)
+    alert("Nhiệt độ F = " + temPer.changeValueCtoK())
+    alert("Nhiệt độ K = " + temPer.changeValueCtoF())
+</script>
+</body>
+</html>
