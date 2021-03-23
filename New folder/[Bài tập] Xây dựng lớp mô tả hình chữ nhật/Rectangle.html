@@ -26,53 +26,53 @@
             return c * d;
         }
     }
-    // Hiển thị height, width, perimeter, acreage hình chữ nhật
-    // let ctx = document.getElementById("myCanvas").getContext("2d");
-    // let rectangle1 = new Rectangle(100, 100, 400, 250)
-    // let height = rectangle1.getHeight();
-    // let width = rectangle1.getWidth();
-    // let perimeter = rectangle1.getPerimeter();
-    // let acreage = rectangle1.getAcreage();
-    // alert(height +" Chiều dài: "+width+" Chiều rộng: "+perimeter+" Diện tích: "+acreage+" Chu vi: ");
-    // ctx.beginPath();
-    // ctx.rect(100, 100, height, width);
-    // ctx.stroke();
-    // ctx.fill();
+    //Hiển thị height, width, perimeter, acreage hình chữ nhật
+    let ctx = document.getElementById("myCanvas").getContext("2d");
+    let rectangle1 = new Rectangle(100, 100, 400, 250)
+    let height = rectangle1.getHeight();
+    let width = rectangle1.getWidth();
+    let perimeter = rectangle1.getPerimeter();
+    let acreage = rectangle1.getAcreage();
+    alert(height +" Chiều dài: "+width+" Chiều rộng: "+perimeter+" Diện tích: "+acreage+" Chu vi: ");
+    ctx.beginPath();
+    ctx.rect(100, 100, height, width);
+    ctx.stroke();
+    ctx.fill();
 
 
-    // Random màu
-    function randomHex() {
-        return Math.floor(Math.random() * 255)
-    }
-
-    function randomColor() {
-        var red = randomHex();
-        var green = randomHex();
-        var blue = randomHex();
-        return "rgb(" + red + "," + blue + "," + green + ")";
-    }
-
-    function createRectangle() {
-        var ctx = document.getElementById("myCanvas").getContext("2d");
-        var a = Math.random() * window.innerWidth;
-        var b = Math.random() * window.innerHeight;
-        var c = Math.floor(Math.random() * 170);
-        var d = Math.floor(Math.random() * 100);
-        var color = randomColor();
-        // Khởi tạo đối tượng rectangle
-        var rectangle = new Rectangle(a, b, c, d);
-        ctx.beginPath();
-        ctx.fillStyle = color;
-        ctx.fillRect(rectangle.a, rectangle.b, rectangle.c, rectangle.d);
-        ctx.fill();
-    }
-
-    function createMultiRectangle() {
-        for (var i = 0; i <50; i++){
-    createRectangle();
-        }
-    }
-    createMultiRectangle()
+    // // Random màu
+    // function randomHex() {
+    //     return Math.floor(Math.random() * 255)
+    // }
+    //
+    // function randomColor() {
+    //     var red = randomHex();
+    //     var green = randomHex();
+    //     var blue = randomHex();
+    //     return "rgb(" + red + "," + blue + "," + green + ")";
+    // }
+    //
+    // function createRectangle() {
+    //     var ctx = document.getElementById("myCanvas").getContext("2d");
+    //     var a = Math.random() * window.innerWidth;
+    //     var b = Math.random() * window.innerHeight;
+    //     var c = Math.floor(Math.random() * 170);
+    //     var d = Math.floor(Math.random() * 100);
+    //     var color = randomColor();
+    //     // Khởi tạo đối tượng rectangle
+    //     var rectangle = new Rectangle(a, b, c, d);
+    //     ctx.beginPath();
+    //     ctx.fillStyle = color;
+    //     ctx.fillRect(rectangle.a, rectangle.b, rectangle.c, rectangle.d);
+    //     ctx.fill();
+    // }
+    //
+    // function createMultiRectangle() {
+    //     for (var i = 0; i <50; i++){
+    // createRectangle();
+    //     }
+    // }
+    // createMultiRectangle()
 
 </script>
 </body>

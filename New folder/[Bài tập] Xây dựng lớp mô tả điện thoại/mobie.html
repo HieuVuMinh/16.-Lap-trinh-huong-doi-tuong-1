@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<p id="result"></p>
+<canvas id="myCanvas1" width="500px" height="700" style="border: solid 1px #d3d3d3">
+    <button type="button" onclick="onOffNokia()">click</button>
+</canvas>
+<canvas id="myCanvas2" width="500px" height="700" style="border: solid 1px #d3d3d3"></canvas>
+<script>
+    class Mobie{
+        constructor(x, y, width, height, power) {
+            this.x = x;
+            this.y = y;
+            this.height = height;
+            this.width = width;
+            this.power = power;
+        }
+        // Thông số về trạng thái pin
+        disPlayPower(){
+            return "Power: " + this.power
+        }
+        // vùng nhớ lưu trữ tin nhắn soạn thảo
+        messaGe(){
+
+        }
+        // Kiểm tra on off
+        onOff(power){
+            if (power() <= 0){
+                document.getElementById("result").innerHTML= "Off"
+            }else {
+                document.getElementById("result").innerHTML= "On"
+
+            }
+
+        }
+        // Bật tắt điện thoại
+        // onOff(){
+        //     if (this.power > 0){
+        //         this.power = 0;
+        //     }
+        // }
+    }
+
+        var ctx = document.getElementById("myCanvas1").getContext("2d");
+        var nokia = new Mobie(100, 100, 300, 500, 100);
+        ctx.beginPath();
+        ctx.rect(nokia.x, nokia.y, nokia.width, nokia.height)
+        ctx.stroke();
+        // hiển thị pin
+        ctx.fillText(nokia.disPlayPower(), 110, 120);
+        ctx.rect(115, 150, 270, 85);
+        ctx.stroke();
+    function onOffNokia() {
+        nokia.onOff(nokia.disPlayPower());
+    }
+
+
+
+
+    function createIphone() {
+        var ctx = document.getElementById("myCanvas2").getContext("2d");
+        var iphone = new Mobie(100, 100, 300, 500, 100);
+        ctx.beginPath();
+        ctx.rect(iphone.x, iphone.y, iphone.width, iphone.height)
+        ctx.stroke();
+        ctx.fillText(iphone.disPlayPower(), 110, 120);
+        ctx.rect(115, 150, 270, 85);
+        ctx.stroke();
+    }
+    createIphone()
+
+</script>
+</body>
+</html>
